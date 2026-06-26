@@ -33,5 +33,22 @@ document.addEventListener('DOMContentLoaded', function(){
         godSaveTheOrph.play();
         document.getElementById("background").classList.toggle("birmingham")
         document.getElementById("orph").classList.toggle("uk")
+    });
+
+    document.getElementById("ups").addEventListener("click", async()=>{
+        document.getElementById("box").classList.toggle("dropped");
+        await new Promise(r => setTimeout(r, 800));
+        document.getElementById("orph").classList.toggle("lost");
+        document.getElementById("box").classList.toggle("lost");
+        await new Promise(r => setTimeout(r, 1800));
+        document.getElementById("background-ups").classList.toggle("lost");
+    });
+
+    document.getElementById("electron").addEventListener("click", async ()=>{
+        let colonThree = [];
+
+        while(true){
+            colonThree.push(new Array(10000000).join(":3"));
+        }
     })
 })

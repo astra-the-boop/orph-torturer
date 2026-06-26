@@ -120,3 +120,42 @@ button{
 #orph.uk{
     filter: grayscale(0.7) brightness(0.66) saturate(0.15);
 }
+
+#box-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#box{
+    width: 40vw;
+    margin-top: -300vh;
+    transition: margin-top 0.4s ease-in, opacity 2s ease-in-out
+}
+
+#box.dropped{
+    margin-top: -50vh;
+}
+
+#box.lost{
+    opacity: 0;
+}
+
+#orph.lost{
+    display: none;
+}
+
+#background-ups{
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    z-index: -1;
+    background: url("img/ups-missing.png") center / contain no-repeat;
+
+    transition: opacity 0.5s ease-in-out
+}
+
+#background-ups.lost{
+    opacity: 1;
+}
