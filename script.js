@@ -17,4 +17,21 @@ document.addEventListener('DOMContentLoaded', function(){
         await new Promise(r => setTimeout(r, 580));
         document.getElementById("orph").classList.toggle("crashed-into")
     })
+
+    document.getElementById("rm-rf").addEventListener("click", async ()=>{
+        if(document.getElementById("rm-rf").innerText === "mkdir orph"){
+            document.getElementById("rm-rf").innerText = "rm rf ./orph"
+        }else{
+            document.getElementById("rm-rf").innerText = "mkdir orph"
+        }
+
+        document.getElementById("orph").classList.toggle("removed");
+    });
+
+    document.getElementById("uk").addEventListener("click", ()=>{
+        const godSaveTheOrph = new Audio("img/god-save-the-orph.oga");
+        godSaveTheOrph.play();
+        document.getElementById("background").classList.toggle("birmingham")
+        document.getElementById("orph").classList.toggle("uk")
+    })
 })

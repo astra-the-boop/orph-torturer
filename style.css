@@ -1,13 +1,13 @@
 body{
-    background-color: #030303;
     margin: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    background: #030303;
 }
 
 #orph{
     width: 15rem;
-    transition: transform 0.2s ease-in-out, margin-top 0.2s, margin-left 0.2s;
+    transition: transform 0.2s ease-in-out, margin-top 0.2s, margin-left 0.2s, filter 63s;
 }
 
 #orph-container{
@@ -96,4 +96,27 @@ button{
 #orph.crashed-into{
     transform: translateY(-60vh) rotate(-70deg) scaleX(50%) scaleY(150%);
     margin-left: 150vw;
+}
+
+#orph.removed {
+    display: none;
+}
+
+#background{
+    position: fixed;
+    inset: 0;
+    background: url("img/birmingham.jpeg") center / cover no-repeat;
+    opacity: 0;
+    z-index: -1;
+
+    transition: opacity 63s, filter 63s
+}
+
+#background.birmingham{
+    opacity: 1;
+    filter: grayscale(0.5) brightness(0.77) saturate(0.15) sepia(0.5);
+}
+
+#orph.uk{
+    filter: grayscale(0.7) brightness(0.66) saturate(0.15);
 }
